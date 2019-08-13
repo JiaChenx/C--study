@@ -13,7 +13,7 @@ int factor();
 int lrparser();
 int statement();
 int term();
-int yucu();
+int pretreat();
 int expression();
 
 int main()
@@ -141,7 +141,7 @@ int lrparser()
     if(syn==1)
     {
         scaner();
-        yucu();
+        pretreat();
         if(syn==6)
         {
             scaner();
@@ -163,7 +163,7 @@ int lrparser()
 }
 
 
-int yucu()
+int pretreat()
 {
     statement();
     while(syn==26)
