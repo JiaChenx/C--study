@@ -5,7 +5,7 @@ int main()
 {
     int a,b,int_sum;
     char char_sum[10];
-    scanf("%d %d",&a,&b);
+    if(scanf("%d %d",&a,&b)==1);
     if((a<=1000000||a>=-1000000)&&(b<=1000000||b>=-1000000))
     {
         int_sum = a + b;
@@ -25,7 +25,7 @@ int main()
         for(j=i;j>=0;j--)
         {
             printf("%d",char_sum[j]);
-            if(j == 3)
+            if((j == 3)||(j == 6))
             {
                 printf(",");
             }
@@ -33,6 +33,6 @@ int main()
         return 0;
     }
     else
-        printf("number out of limit !");
+        return NULL;
 }
   
