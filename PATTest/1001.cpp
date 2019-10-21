@@ -1,12 +1,15 @@
 /*1001*/
 #include<stdio.h>
 #include<stdlib.h>
+#define MAX_VALUE 1000000
+#define MIN_VALUE -1000000
+ 
 int main()
 {
     int a,b,int_sum;
     char char_sum[10];
     if(scanf("%d %d",&a,&b)==1);
-    if((a<=1000000||a>=-1000000)&&(b<=1000000||b>=-1000000))
+    if((a <= MAX_VALUE && a >= MIN_VALUE)&&(b <= MAX_VALUE && b >= MIN_VALUE))
     {
         int_sum = a + b;
         int temp = int_sum;
@@ -15,7 +18,7 @@ int main()
         {
             if(temp<0)
                 temp = -temp;
-            char_sum[i]=temp % 10;
+            char_sum[i] = temp % 10;
             temp = temp/10;
             if(temp == 0)
                 break;
@@ -25,7 +28,7 @@ int main()
         for(j=i;j>=0;j--)
         {
             printf("%d",char_sum[j]);
-            if((j == 3)||(j == 6))
+            if((j%3 == 0)&&(j != 0))
             {
                 printf(",");
             }
@@ -33,6 +36,6 @@ int main()
         return 0;
     }
     else
-        return NULL;
+        return -1;
 }
   
